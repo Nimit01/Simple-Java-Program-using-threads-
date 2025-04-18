@@ -1,18 +1,78 @@
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+---
 
-## Folder Structure
+## 🚀 How it Works
 
-The workspace contains two folders by default, where:
+Each arithmetic operation is implemented as a **Runnable class**, and its logic is defined inside the `run()` method. The `Main.java` file creates and starts threads for each of these tasks.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 📂 File Descriptions
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### `Main.java`
+**Purpose**: Entry point of the program.
 
-## Dependency Management
+**Key Logic**:
+- Creates instances of all arithmetic tasks.
+- Starts each task on a separate thread.
+- Uses `.join()` to ensure the main thread waits for all tasks to finish.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+### `AdditionTask.java`
+**Class**: `AdditionTask implements Runnable`
+
+**Functionality**:
+- Performs addition of two integers.
+- Method: 
+  - `run()`: Adds two predefined integers `a` and `b`, and prints the result.
+
+---
+
+### `SubtractionTask.java`
+**Class**: `SubtractionTask implements Runnable`
+
+**Functionality**:
+- Performs subtraction of two integers.
+- Method:
+  - `run()`: Subtracts `b` from `a` and prints the result.
+
+---
+
+### `MultiplicationTask.java`
+**Class**: `MultiplicationTask implements Runnable`
+
+**Functionality**:
+- Performs multiplication of two integers.
+- Method:
+  - `run()`: Multiplies `a` and `b`, and prints the result.
+
+---
+
+### `DivisionTask.java`
+**Class**: `DivisionTask implements Runnable`
+
+**Functionality**:
+- Performs division of two integers.
+- Method:
+  - `run()`: Checks for division by zero and then divides `a` by `b`, printing the result.
+
+---
+
+## 📌 Key Concepts Demonstrated
+
+- **Multithreading** using `Runnable` interface  
+- **Encapsulation** and modular design  
+- **Concurrent Execution** of independent tasks  
+- **Thread synchronization** with `.join()`  
+
+---
+
+## ✅ Requirements
+
+- Java 8 or later  
+- Any IDE or terminal with Java support
+
+---
+
+
